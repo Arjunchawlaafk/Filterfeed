@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>TheBrokenaire | Home</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="https://fontmeme.com/permalink/241018/4e34a6d0ddd3b117696e149077257269.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <body>
+        <!-- Header Area Start -->
+        <header class="header-area">
+            <div class="top-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Breaking News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="breaking-news-area">
+                                <h5 class="breaking-news-title">Top Headlines</h5>
+                                <div id="breakingNewsTicker" class="ticker">
+                                    <ul id="newsList">
+                                        <!-- News items will be injected here -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stock News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="stock-news-area">
+                                <div id="stockNewsTicker" class="ticker">
+                                    <ul>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/USD</span>
+                                                    <span id="btc-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/INR</span>
+                                                    <span id="btc-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/EUR</span>
+                                                    <span id="btc-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/USD</span>
+                                                    <span id="eth-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4 id="eth-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/INR</span>
+                                                    <span id="eth-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="eth-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/EUR</span>
+                                                    <span id="eth-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4 id="eth-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/USD</span>
+                                                    <span id="usdt-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/INR</span>
+                                                    <span id="usdt-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/EUR</span>
+                                                    <span id="usdt-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Middle Header Area -->
+            <div class="middle-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Logo Area -->
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="logo-area">
+                                <a href="index.html"><img src="https://fontmeme.com/permalink/241018/fd3e5fc1a05913c69ac90a7389d950bf.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <!-- Header Advert Area 
+                        <div class="col-12 col-md-8">
+                            <div class="header-advert-area">
+                                <a href="#"><img src="img/core-img/logo.png" alt="header-add"></a>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Header Area -->
+            <div class="bottom-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="main-menu">
+                                <nav class="navbar navbar-expand-lg">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                    <div class="collapse navbar-collapse" id="gazetteMenu">
+                                        <ul class="navbar-nav mr-auto" class="but">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                            </li>
+                                          <!--  <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="index.html">Home</a>
+                                                    <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                                    <a class="dropdown-item" href="single-post.html">Single Post</a>
+                                                    <a class="dropdown-item" href="about-us.html">About Us</a>
+                                                    <a class="dropdown-item" href="contact.html">Contact</a>
+                                                </div>
+                                            </li>-->
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="catagory.html">Catagory</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="about-us.html">About Us</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="contact.html">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <!-- Search Form 
+                                        <div class="header-search-form mr-auto">
+                                            <form action="#">
+                                                <input type="search" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                                <input class="d-none" type="submit" value="submit">
+                                            </form>
+                                        </div>-->
+                                        <!-- Search btn 
+                                        <div id="searchbtn">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </div>-->
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Area End -->
+
+
+    <section class="single-post-area">
+        <!-- Single Post Title -->
+        <div class="single-post-title bg-img background-overlay" style="background-image: url(img/bg-img/1.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-end">
+                    <div class="col-12">
+                        <div class="single-post-title-content">
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">Editorial</a>
+                            </div>
+                            <h2 class="font-pt">Move over, bitcoin.Here comes litecoin</h2>
+                            <p>March 29, 2016</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-post-contents">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nunc libero, vitae rutrum nunc porta id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam arcu augue, semper at elementum</p>
+                            <p>nec, cursus nec ante. Vestibulum sed velit scelerisque elit posuere vulputate vel viverra quam. Curabitur laoreet aliquam diam, non mattis arcu feugiat sed. Sed eget pellentesque lacus. Pellentesque in diam vel mauris pretium commodo a ac magna. Suspendisse scelerisque tellus convallis tortor posuere, ut commodo diam blandit. Morbi vel nulla non turpis luctus tempor eu eu urna. Aliquam in lorem a augue mollis volutpat. Nunc iaculis rutrum enim nec viverra. Morbi eleifend metus id tellus luctus, ac porta orci imperdiet.</p>
+                            <p>Morbi efficitur ligula a efficitur mollis. Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis.</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="single-post-thumb">
+                            <img src="img/blog-img/24.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>Suspendisse scelerisque tellus convallis tortor posuere, ut commodo diam blandit. Morbi vel nulla non turpis luctus tempor eu eu urna. Aliquam in lorem a augue mollis volutpat. Nunc iaculis rutrum enim nec viverra. Morbi eleifend metus id tellus luctus, ac porta orci imperdiet.</p>
+                            <p>Morbi efficitur ligula a efficitur mollis. Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis. </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <div class="single-post-blockquote">
+                            <blockquote>
+                                <h6 class="font-pt mb-0">“Vestibulum nulla diam, sodales sit amet erat vel, mollis iaculis lectus. Suspendisse in rhoncus est. Sed aliquet mauris in efficitur tempor. Proin enim felis, laoreet id viverra at”</h6>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div class="single-post-text">
+                            <p>Suspendisse vitae sapien vitae urna eleifend dapibus ut non tortor. In nec metus ac mi ultrices commodo interdum et lacus. Suspendisse potenti. Suspendisse interdum semper dolor nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci non tortor pretium hendrerit at vel massa. Nunc ut fermentum felis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gazette-post-discussion-area section_padding_100 bg-gray">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <!-- Comment Area Start -->
+                    <div class="comment_area section_padding_50 clearfix">
+                        <div class="gazette-heading">
+                            <h4 class="font-bold">Discussion</h4>
+                        </div>
+
+                        <ol>
+                            <!-- Single Comment Area -->
+                            <li class="single_comment_area">
+                                <div class="comment-wrapper d-md-flex align-items-start">
+                                    <!-- Comment Meta -->
+                                    <div class="comment-author">
+                                        <img src="img/blog-img/25.jpg" alt="">
+                                    </div>
+                                    <!-- Comment Content -->
+                                    <div class="comment-content">
+                                        <h5>John Doe</h5>
+                                        <span class="comment-date font-pt">December 18, 2017</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nunc libero, vitae rutrum nunc porta id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam arcu augue, semper at elementum nec, cursus nec ante.</p>
+                                        <a class="reply-btn" href="#">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <ol class="children">
+                                    <li class="single_comment_area">
+                                        <div class="comment-wrapper d-md-flex align-items-start">
+                                            <!-- Comment Meta -->
+                                            <div class="comment-author">
+                                                <img src="img/blog-img/25.jpg" alt="">
+                                            </div>
+                                            <!-- Comment Content -->
+                                            <div class="comment-content">
+                                                <h5>John Doe</h5>
+                                                <span class="comment-date text-muted">December 18, 2017</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nunc libero, vitae rutrum nunc porta id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam arcu augue, semper at elementum nec, cursus nec ante.</p>
+                                                <a class="reply-btn" href="#">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- Leave A Comment -->
+                    <div class="leave-comment-area clearfix">
+                        <div class="comment-form">
+                            <div class="gazette-heading">
+                                <h4 class="font-bold">leave a comment</h4>
+                            </div>
+                            <!-- Comment Form -->
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="Enter Your Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn leave-comment-btn">SUBMIT <i class="fa fa-angle-right ml-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer Area Start -->
+   <footer class="footer-area bg-img background-overlay" style="background-image: url();">
+    <!-- Top Footer Area 
+    <div class="top-footer-area section_padding_100_70">
+        <div class="container">
+            <div class="row">-->
+                <!-- Single Footer Widget 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">Regions</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">U.S.</a></li>
+                            <li><a href="#">Africa</a></li>
+                            <li><a href="#">Americas</a></li>
+                            <li><a href="#">Asia</a></li>
+                            <li><a href="#">China</a></li>
+                            <li><a href="#">Europe</a></li>
+                            <li><a href="#">Middle</a></li>
+                            <li><a href="#">East</a></li>
+                            <li><a href="#">Opinion</a></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <!-- Single Footer Widget 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">Fashion</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">Election 2016</a></li>
+                            <li><a href="#">Nation</a></li>
+                            <li><a href="#">World</a></li>
+                            <li><a href="#">Our Team</a></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <!-- Single Footer Widget
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">Politics</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Markets</a></li>
+                            <li><a href="#">Tech</a></li>
+                            <li><a href="#">Luxury</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <!-- Single Footer Widget 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">Featured</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">Football</a></li>
+                            <li><a href="#">Golf</a></li>
+                            <li><a href="#">Tennis</a></li>
+                            <li><a href="#">Motorsport</a></li>
+                            <li><a href="#">Horseracing</a></li>
+                            <li><a href="#">Equestrian</a></li>
+                            <li><a href="#">Sailing</a></li>
+                            <li><a href="#">Skiing</a></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <!-- Single Footer Widget 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">FAQ</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">Aviation</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Traveller</a></li>
+                            <li><a href="#">Destinations</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Food/Drink</a></li>
+                            <li><a href="#">Hotels</a></li>
+                            <li><a href="#">Partner Hotels</a></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <!-- Single Footer Widget 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="single-footer-widget">
+                        <div class="footer-widget-title">
+                            <h4 class="font-pt">+More</h4>
+                        </div>
+                        <ul class="footer-widget-menu">
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Architecture</a></li>
+                            <li><a href="#">Arts</a></li>
+                            <li><a href="#">Autos</a></li>
+                            <li><a href="#">Luxury</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Bottom Footer Area -->
+    <div class="bottom-footer-area" style="background-color: rgb(237, 237, 237);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="copywrite-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website template credits to <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Area End -->
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+
+
+<!-- Fetch crypto prices from CoinGecko API -->
+<script>
+const apiKey = 'CG-zN4mRF3ph6G9mTGSB7P61M1e'; // Your API key
+const coingeckoApiURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,inr,eur&include_24hr_change=true';
+
+// Store previous prices for comparison
+let previousPrices = {
+btc: { usd: 0, inr: 0, eur: 0 },
+eth: { usd: 0, inr: 0, eur: 0 },
+usdt: { usd: 0, inr: 0, eur: 0 }
+};
+
+async function fetchCryptoPrices() {
+try {
+    // Fetch crypto prices from CoinGecko using your API key
+    const cryptoResponse = await fetch(coingeckoApiURL);
+    const cryptoData = await cryptoResponse.json();
+
+    console.log('API Response:', cryptoData); // Log the response for debugging
+
+    // Check if the data is valid
+    if (cryptoResponse.ok && cryptoData) {
+        // Extract current prices and 24h price changes
+        const btcPriceUsd = parseFloat(cryptoData.bitcoin.usd).toFixed(2);
+        const btcPriceChangeUsd = parseFloat(cryptoData.bitcoin.usd_24h_change).toFixed(2);
+
+        const btcPriceInr = parseFloat(cryptoData.bitcoin.inr).toFixed(2);
+        const btcPriceChangeInr = parseFloat(cryptoData.bitcoin.inr_24h_change).toFixed(2);
+
+        const btcPriceEur = parseFloat(cryptoData.bitcoin.eur).toFixed(2);
+        const btcPriceChangeEur = parseFloat(cryptoData.bitcoin.eur_24h_change).toFixed(2);
+
+        const ethPriceUsd = parseFloat(cryptoData.ethereum.usd).toFixed(2);
+        const ethPriceChangeUsd = parseFloat(cryptoData.ethereum.usd_24h_change).toFixed(2);
+
+        const ethPriceInr = parseFloat(cryptoData.ethereum.inr).toFixed(2);
+        const ethPriceChangeInr = parseFloat(cryptoData.ethereum.inr_24h_change).toFixed(2);
+
+        const ethPriceEur = parseFloat(cryptoData.ethereum.eur).toFixed(2);
+        const ethPriceChangeEur = parseFloat(cryptoData.ethereum.eur_24h_change).toFixed(2);
+
+        const usdtPriceUsd = parseFloat(cryptoData.tether.usd).toFixed(2);
+        const usdtPriceChangeUsd = parseFloat(cryptoData.tether.usd_24h_change).toFixed(2);
+
+        const usdtPriceInr = parseFloat(cryptoData.tether.inr).toFixed(2);
+        const usdtPriceChangeInr = parseFloat(cryptoData.tether.inr_24h_change).toFixed(2);
+
+        const usdtPriceEur = parseFloat(cryptoData.tether.eur).toFixed(2);
+        const usdtPriceChangeEur = parseFloat(cryptoData.tether.eur_24h_change).toFixed(2);
+
+        // Update price changes and display them
+        updatePrice('btc', btcPriceUsd, btcPriceInr, btcPriceEur, btcPriceChangeUsd, btcPriceChangeInr, btcPriceChangeEur);
+        updatePrice('eth', ethPriceUsd, ethPriceInr, ethPriceEur, ethPriceChangeUsd, ethPriceChangeInr, ethPriceChangeEur);
+        updatePrice('usdt', usdtPriceUsd, usdtPriceInr, usdtPriceEur, usdtPriceChangeUsd, usdtPriceChangeInr, usdtPriceChangeEur);
+    } else {
+        console.error('Error fetching prices:', cryptoData);
+        showError();
+    }
+} catch (error) {
+    console.error('Error fetching prices:', error);
+    showError();
+}
+}
+
+function showError() {
+document.querySelector('#btc-price-usd').innerText = 'Error fetching';
+document.querySelector('#eth-price-usd').innerText = 'Error fetching';
+document.querySelector('#usdt-price-usd').innerText = 'Error fetching';
+}
+
+// Update price and percentage change
+function updatePrice(crypto, priceUsd, priceInr, priceEur, changeUsd, changeInr, changeEur) {
+// Add currency symbols to the prices
+const formattedUsdPrice = `$${priceUsd}`;
+const formattedInrPrice = `₹${priceInr}`;
+const formattedEurPrice = `€${priceEur}`;
+
+// Update the displayed price changes in HTML
+setPriceChangeText(`#${crypto}-price-change`, changeUsd);
+setPriceChangeText(`#${crypto}-price-inr-change`, changeInr);
+setPriceChangeText(`#${crypto}-price-eur-change`, changeEur);
+
+// Update the HTML elements with the fetched prices
+document.querySelector(`#${crypto}-price-usd`).innerText = formattedUsdPrice;
+document.querySelector(`#${crypto}-price-inr`).innerText = formattedInrPrice;
+document.querySelector(`#${crypto}-price-eur`).innerText = formattedEurPrice;
+
+// Save the current prices as the previous prices for the next update
+previousPrices[crypto] = { 
+    usd: parseFloat(priceUsd), 
+    inr: parseFloat(priceInr), 
+    eur: parseFloat(priceEur) 
+};
+}
+
+
+// Function to set price change text, color, and class based on value
+function setPriceChangeText(selector, change) {
+const element = document.querySelector(selector);
+element.innerText = change + '%';
+
+// Apply color and class based on the change value
+if (parseFloat(change) < 0) {
+    element.style.color = 'red'; // Negative change
+    element.parentElement.classList.remove('plus-index');
+    element.parentElement.classList.add('minus-index');
+} else {
+    element.style.color = 'green'; // Positive change
+    element.parentElement.classList.remove('minus-index');
+    element.parentElement.classList.add('plus-index');
+}
+}
+
+// Fetch prices every 10 seconds
+setInterval(fetchCryptoPrices, 30000); // 30-second interval
+fetchCryptoPrices(); // Initial fetch
+
+</script>
+
+</body>
+
+</html>

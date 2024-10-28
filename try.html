@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .marquee-content-items {
+            list-style: none;
+            padding: 0;
+        }
+        .marquee-content-items li {
+            margin: 5px 0;
+        }
+        .marquee-content-items a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .latest-news-time {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .marquee {
+            opacity: 0; /* Start invisible */
+            transition: opacity 0.5s; /* Fade in transition */
+        }
+    </style>
+    <script>
+        $(document).ready(() => {
+            const news1apiUrl = `http://localhost:3000/video-news`;
+
+            async function fetchFinancialNews() {
+                try {
+                    const response = await fetch(news1apiUrl);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+
+                    const data = await response.json();
+                    const articles = data; // Use the array directly from the API response
+                    const marqueeContent = $('.marquee-content-items');
+
+                    // Clear existing news items
+                    marqueeContent.empty();
+
+                    if (articles.length === 0) {
+                        marqueeContent.append(`<li>No financial news available</li>`);
+                        return;
+                    }
+
+                    // Loop through the articles and create list items
+                    articles.forEach((article) => {
+                        const newsTime = new Date(article.publishedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        const listItem = `<li><a href="${article.url}" target="_blank"><span class="latest-news-time">${newsTime}</span> ${article.title}</a></li>`;
+                        marqueeContent.append(listItem);
+                    });
+
+                    // Make the marquee visible
+                    $('.marquee').css('opacity', '1'); // Fade in marquee after loading news
+                } catch (error) {
+                    console.error('Error fetching financial news:', error);
+                    const marqueeContent = $('.marquee-content-items');
+                    marqueeContent.empty().append(`<li>Error fetching news</li>`);
+                }
+            }
+
+            // Fetch financial news when the page loads
+            fetchFinancialNews();
+
+            // Optionally, refresh news every 30 minutes (1800000 milliseconds)
+            setInterval(fetchFinancialNews, 1800000);
+        });
+    </script>
+</head>
+<body>
+    <h1>Latest Financial News</h1>
+    <ul class="marquee-content-items"></ul>
+    <div class="marquee">Loading news...</div> <!-- This can be styled for marquee effect -->
+</body>
+</html>
