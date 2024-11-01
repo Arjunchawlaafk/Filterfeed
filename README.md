@@ -29,7 +29,8 @@ The Daily Thread is not just a university project; it's a vision for the future 
 ## Contact
 For more information or inquiries about The Daily Thread, please feel free to reach out.
 
----
+*This project will not only serve as an impressive addition to my CV but also as a lifelong endeavor to make news consumption more meaningful.*
+
 # Website Template Credits
 
 This website template was created using the following open-source tools and libraries:
@@ -45,4 +46,3 @@ This website template was created using the following open-source tools and libr
 ### Template Source
 - **[Template Website](https://themewagon.com/themes/free-bootstrap-magazine-template-thegazette/)** 
 
-*This project will not only serve as an impressive addition to my CV but also as a lifelong endeavor to make news consumption more meaningful.*
