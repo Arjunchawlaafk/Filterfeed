@@ -30,5 +30,19 @@ The Daily Thread is not just a university project; it's a vision for the future 
 For more information or inquiries about The Daily Thread, please feel free to reach out.
 
 ---
+# Website Template Credits
+
+This website template was created using the following open-source tools and libraries:
+
+### Built With
+- **[Bootstrap 4](https://getbootstrap.com/)** - A responsive and flexible CSS framework for building responsive websites.
+- **[FontAwesome](https://fontawesome.com/)** - A popular icon library providing scalable vector icons for website use.
+- **[jQuery 2.2.4](https://jquery.com/)** - A fast, small, and feature-rich JavaScript library for simplifying HTML DOM manipulation.
+- **[Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)** - A responsive lightbox & dialog script with focus on performance and providing a great user experience.
+- **[Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/)** - A touch-enabled jQuery plugin that lets you create beautiful responsive carousel sliders.
+- **[noUiSlider](https://github.com/leongersen/noUiSlider)** - A lightweight JavaScript range slider with full touch support.
+
+### Template Source
+- **[Template Website](https://themewagon.com/themes/free-bootstrap-magazine-template-thegazette/)** 
 
 *This project will not only serve as an impressive addition to my CV but also as a lifelong endeavor to make news consumption more meaningful.*
