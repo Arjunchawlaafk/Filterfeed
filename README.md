@@ -35,6 +35,9 @@ For more information or inquiries about The Daily Thread, please feel free to re
 
 This website template was created using the following open-source tools and libraries:
 
+### Powered By
+- **[NewsCatcher API ](https://www.newscatcherapi.com/)** - Clean, Enriched, Ready-to-Use News Data API
+  
 ### Built With
 - **[Bootstrap 4](https://getbootstrap.com/)** - A responsive and flexible CSS framework for building responsive websites.
 - **[FontAwesome](https://fontawesome.com/)** - A popular icon library providing scalable vector icons for website use.
