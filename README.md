@@ -13,7 +13,7 @@ In today's fast-paced digital landscape, readers often encounter a deluge of new
 - **Real-Time Updates**: The platform ensures users receive the latest news articles as they break, keeping them informed on the go.
 
 ## Project Goals
-This project serves as my university assignment, with the dual purpose of enhancing my skills in web development and contributing positively to the news consumption experience. I aim to:
+This project serves as my project, with the dual purpose of enhancing my skills in web development and contributing positively to the news consumption experience. I aim to:
 - Showcase my technical abilities and commitment to creating valuable solutions through this project.
 - Maintain and evolve The Daily Thread over the next 1 to 10 years, adapting to changes in news consumption trends and user preferences.
 
