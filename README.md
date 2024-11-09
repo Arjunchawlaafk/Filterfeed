@@ -50,3 +50,7 @@ This website template was created using the following open-source tools and libr
 
 ### Template Source
 - **[Template Website](https://themewagon.com/themes/free-bootstrap-magazine-template-thegazette/)**
+
+- ## License
+
+Website is licensed under the **[Creative Commons Attribution 3.0 License (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/)**.
