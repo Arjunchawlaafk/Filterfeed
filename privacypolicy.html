@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>FilterFeed | Privacy Policy</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="https://fontmeme.com/permalink/241109/967f838d6465ff885449f419a5e7b243.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="loading-circle"></div>
+    </div>
+
+    
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="breaking-news-area">
+                            <h5 class="breaking-news-title">Top Headlines</h5>
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul id="newsList">
+                                    <!-- News items will be injected here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stock News Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="stock-news-area">
+                            <div id="stockNewsTicker" class="ticker">
+                                <ul>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>BTC/USD</span>
+                                                <span id="btc-price-usd">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="btc-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>BTC/INR</span>
+                                                <span id="btc-price-inr">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="btc-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>BTC/EUR</span>
+                                                <span id="btc-price-eur">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="btc-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>ETH/USD</span>
+                                                <span id="eth-price-usd">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4 id="eth-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>ETH/INR</span>
+                                                <span id="eth-price-inr">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="eth-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>ETH/EUR</span>
+                                                <span id="eth-price-eur">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index minus-index">
+                                                <h4 id="eth-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>USDT/USD</span>
+                                                <span id="usdt-price-usd">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="usdt-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>USDT/INR</span>
+                                                <span id="usdt-price-inr">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="usdt-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                        <div class="single-stock-report">
+                                            <div class="stock-values">
+                                                <span>USDT/EUR</span>
+                                                <span id="usdt-price-eur">Fetching...</span>
+                                            </div>
+                                            <div class="stock-index plus-index">
+                                                <h4 id="usdt-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Middle Header Area -->
+<div class="middle-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <!-- Logo Area -->
+            <div class="col-12 d-flex justify-content-center">
+                <div class="logo-area">
+                    <a href="/Home"><img src="https://fontmeme.com/permalink/241109/258fbbb811e2a4d9f13b5c59474a107b.png" alt="logo"></a>
+                </div>
+            </div>
+            <!-- Header Advert Area 
+            <div class="col-12 col-md-8">
+                <div class="header-advert-area">
+                    <a href="#"><img src="img/core-img/logo.png" alt="header-add"></a>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bottom Header Area -->
+<div class="bottom-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="main-menu">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                        <div class="collapse navbar-collapse" id="gazetteMenu">
+                            <ul class="navbar-nav mr-auto" class="but">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/Home">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                              <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catagory</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/Politics">Politices</a>
+                                        <a class="dropdown-item" href="/Tech">Tech</a>
+                                        <a class="dropdown-item" href="/World">World</a>
+                                        <a class="dropdown-item" href="/Entertainment">Entertainment</a>
+                                        <a class="dropdown-item" href="/Sports">Sports</a>
+                                        <a class="dropdown-item" href="/Finance">Finance</a>
+                                        <a class="dropdown-item" href="/Science">Science</a>
+                                        <a class="dropdown-item" href="/Economics">Economics</a>
+                                        <a class="dropdown-item" href="/Business">Business</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/About-us">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Contact">Contact</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/Acknowledgements">Acknowledgements</a>
+                                        <a class="dropdown-item" href="/Privacy-Policy">Privacy Policy</a>
+                                        <a class="dropdown-item" href="/Terms-and-Conditions">Terms and conditions</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+
+        <section class="single-post-area"  style="margin-top: 80px;">
+            <!-- Single Post Title -->
+            <div class="single-post-title">
+                <div class="container h-100">
+                        <div class="col-12">
+                            <div class="single-post-title-content">
+                                <!-- Post Tag -->
+                                <h2 class="font-pt" style="color: rgb(34, 34, 34); text-align: center;">Privacy Policy</h2>
+                                <p style="color: gray; text-align: center;">November 10, 2024</p>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="single-post-contents" style="margin-top: -250px;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8">
+                            <div class="single-post-text">
+                                <p>At FilterFeed.in, we value your privacy. This Privacy Policy outlines the type of information we collect, how we use it, and your choices regarding your data.</p>
+                                
+                                <h5>1. Information Collection</h5>
+                                <p>FilterFeed.in does not collect personal information directly from users. However, we display news sourced from the <a href="https://www.newscatcherapi.com/" target="_blank">NewsCatcher API</a>, which may collect personal information to provide news content. We encourage you to review the NewsCatcher API's privacy policy to understand how it handles data collection.</p>
+                                
+                                <h5>2. Local Storage</h5>
+                                <p>We use local storage to temporarily store data on your device, such as recently viewed or interacted news articles, to enhance your browsing experience. No data stored in local storage is shared with third parties.</p>
+                                
+                                <h5>3. Third-Party Links</h5>
+                                <p>FilterFeed.in provides links to external news sources. We do not control and are not responsible for the privacy practices of these third-party sites. Users are encouraged to review the privacy policies of any external sites they visit.</p>
+                                
+                                <h5>4. Limited Liability</h5>
+                                <p>FilterFeed.in makes every effort to ensure user privacy and data security but does not assume liability for any unauthorized access or misuse of information by third-party sources. Users access external links at their own risk and should review the relevant privacy policies accordingly.</p>
+                                
+                                <h5>5. Changes to Privacy Policy</h5>
+                                <p>We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated effective date, so please check back regularly.</p>
+                                
+                                <h5>6. Contact Us</h5>
+                                <p>For any questions or concerns about this Privacy Policy, please <a href="contact.html">contact us</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    
+
+   <!-- Footer Area Start -->
+   <footer class="footer-area bg-img background-overlay" style="background-image: url();">
+    
+
+    <!-- Bottom Footer Area -->
+    <div class="bottom-footer-area" style="background-color: rgb(237, 237, 237);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="copywrite-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website template credits to <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Area End -->
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+
+
+<script>
+    const apiKey = 'CG-zN4mRF3ph6G9mTGSB7P61M1e'; // Your API key
+    const coingeckoApiURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,inr,eur&include_24hr_change=true';
+    
+    // Store previous prices for comparison
+    let previousPrices = {
+        btc: { usd: 0, inr: 0, eur: 0 },
+        eth: { usd: 0, inr: 0, eur: 0 },
+        usdt: { usd: 0, inr: 0, eur: 0 }
+    };
+    
+    async function fetchCryptoPrices() {
+        try {
+            // Fetch crypto prices from CoinGecko using your API key
+            const cryptoResponse = await fetch(coingeckoApiURL);
+            const cryptoData = await cryptoResponse.json();
+    
+            console.log('API Response:', cryptoData); // Log the response for debugging
+    
+            // Check if the data is valid
+            if (cryptoResponse.ok && cryptoData) {
+                // Extract current prices and 24h price changes
+                const btcPriceUsd = parseFloat(cryptoData.bitcoin.usd).toFixed(2);
+                const btcPriceChangeUsd = parseFloat(cryptoData.bitcoin.usd_24h_change).toFixed(2);
+    
+                const btcPriceInr = parseFloat(cryptoData.bitcoin.inr).toFixed(2);
+                const btcPriceChangeInr = parseFloat(cryptoData.bitcoin.inr_24h_change).toFixed(2);
+    
+                const btcPriceEur = parseFloat(cryptoData.bitcoin.eur).toFixed(2);
+                const btcPriceChangeEur = parseFloat(cryptoData.bitcoin.eur_24h_change).toFixed(2);
+    
+                const ethPriceUsd = parseFloat(cryptoData.ethereum.usd).toFixed(2);
+                const ethPriceChangeUsd = parseFloat(cryptoData.ethereum.usd_24h_change).toFixed(2);
+    
+                const ethPriceInr = parseFloat(cryptoData.ethereum.inr).toFixed(2);
+                const ethPriceChangeInr = parseFloat(cryptoData.ethereum.inr_24h_change).toFixed(2);
+    
+                const ethPriceEur = parseFloat(cryptoData.ethereum.eur).toFixed(2);
+                const ethPriceChangeEur = parseFloat(cryptoData.ethereum.eur_24h_change).toFixed(2);
+    
+                const usdtPriceUsd = parseFloat(cryptoData.tether.usd).toFixed(2);
+                const usdtPriceChangeUsd = parseFloat(cryptoData.tether.usd_24h_change).toFixed(2);
+    
+                const usdtPriceInr = parseFloat(cryptoData.tether.inr).toFixed(2);
+                const usdtPriceChangeInr = parseFloat(cryptoData.tether.inr_24h_change).toFixed(2);
+    
+                const usdtPriceEur = parseFloat(cryptoData.tether.eur).toFixed(2);
+                const usdtPriceChangeEur = parseFloat(cryptoData.tether.eur_24h_change).toFixed(2);
+    
+                // Update price changes and display them
+                updatePrice('btc', btcPriceUsd, btcPriceInr, btcPriceEur, btcPriceChangeUsd, btcPriceChangeInr, btcPriceChangeEur);
+                updatePrice('eth', ethPriceUsd, ethPriceInr, ethPriceEur, ethPriceChangeUsd, ethPriceChangeInr, ethPriceChangeEur);
+                updatePrice('usdt', usdtPriceUsd, usdtPriceInr, usdtPriceEur, usdtPriceChangeUsd, usdtPriceChangeInr, usdtPriceChangeEur);
+            } else {
+                console.error('Error fetching prices:', cryptoData);
+                showError();
+            }
+        } catch (error) {
+            console.error('Error fetching prices:', error);
+            showError();
+        }
+    }
+    
+    function showError() {
+        document.querySelector('#btc-price-usd').innerText = 'Error fetching';
+        document.querySelector('#eth-price-usd').innerText = 'Error fetching';
+        document.querySelector('#usdt-price-usd').innerText = 'Error fetching';
+    }
+    
+    // Update price and percentage change
+    function updatePrice(crypto, priceUsd, priceInr, priceEur, changeUsd, changeInr, changeEur) {
+        // Add currency symbols to the prices
+        const formattedUsdPrice = `$${priceUsd}`;
+        const formattedInrPrice = `₹${priceInr}`;
+        const formattedEurPrice = `€${priceEur}`;
+    
+        // Update the displayed price changes in HTML
+        setPriceChangeText(`#${crypto}-price-change`, changeUsd);
+        setPriceChangeText(`#${crypto}-price-inr-change`, changeInr);
+        setPriceChangeText(`#${crypto}-price-eur-change`, changeEur);
+    
+        // Update the HTML elements with the fetched prices
+        document.querySelector(`#${crypto}-price-usd`).innerText = formattedUsdPrice;
+        document.querySelector(`#${crypto}-price-inr`).innerText = formattedInrPrice;
+        document.querySelector(`#${crypto}-price-eur`).innerText = formattedEurPrice;
+    
+        // Save the current prices as the previous prices for the next update
+        previousPrices[crypto] = { 
+            usd: parseFloat(priceUsd), 
+            inr: parseFloat(priceInr), 
+            eur: parseFloat(priceEur) 
+        };
+    }
+    
+    
+    // Function to set price change text, color, and class based on value
+    function setPriceChangeText(selector, change) {
+        const element = document.querySelector(selector);
+        element.innerText = change + '%';
+    
+        // Apply color and class based on the change value
+        if (parseFloat(change) < 0) {
+            element.style.color = 'red'; // Negative change
+            element.parentElement.classList.remove('plus-index');
+            element.parentElement.classList.add('minus-index');
+        } else {
+            element.style.color = 'green'; // Positive change
+            element.parentElement.classList.remove('minus-index');
+            element.parentElement.classList.add('plus-index');
+        }
+    }
+    
+    // Fetch prices every 10 seconds
+    setInterval(fetchCryptoPrices, 30000); // 30-second interval
+    fetchCryptoPrices(); // Initial fetch
+    
+        </script>
+        
+    
+    
+    
+    
+        <script>
+        const apiUrl = 'http://localhost:3000/news/news'; // Replace 'finance' with any category
+    
+        async function fetchNews() {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+    
+            const data = await response.json();
+            console.log('API Response:', data); // Debugging
+    
+            const articles = data.slice(0, 5); // First 5 articles
+            const newsList = document.getElementById('newsList');
+    
+            // Clear existing news items
+            newsList.innerHTML = '';
+    
+            if (articles.length === 0) {
+                const noArticlesItem = document.createElement('li');
+                noArticlesItem.className = 'ticker-item';
+                noArticlesItem.textContent = 'No articles found.';
+                newsList.appendChild(noArticlesItem);
+                return;
+            }
+    
+            articles.forEach((article) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'ticker-item';
+    
+                // Only add a link if the link field exists
+                if (article.link) {
+                    const link = document.createElement('a');
+                    link.href = article.link;  // Updated to use 'link' instead of 'url'
+                    link.target = '_blank';
+                    link.textContent = article.title;
+                    listItem.appendChild(link);
+                } else {
+                    listItem.textContent = article.title || 'No title available';
+                }
+    
+                newsList.appendChild(listItem);
+            });
+    
+            // Initialize the ticker animation
+            initializeTicker();
+    
+        } catch (error) {
+            console.error('Error fetching news:', error);
+            const newsList = document.getElementById('newsList');
+            newsList.innerHTML = '<li>Error fetching news. Please try again later.</li>';
+        }
+    }
+    
+    
+            
+            // Function to initialize the ticker animation
+            function initializeTicker() {
+                const items = document.querySelectorAll('#newsList li');
+                if (items.length === 0) return;
+            
+                let currentIndex = 0;
+                const itemCount = items.length;
+            
+                function showNextNewsItem() {
+                    items.forEach(item => {
+                        item.classList.remove('active', 'exit');
+                        item.style.display = 'none';
+                    });
+            
+                    items[currentIndex].classList.add('active');
+                    items[currentIndex].style.display = 'block';
+            
+                    const displayTime = 8000;
+                    const transitionTime = 1800;
+            
+                    setTimeout(() => {
+                        items[currentIndex].classList.add('exit');
+                        currentIndex = (currentIndex + 1) % itemCount;
+                        setTimeout(showNextNewsItem, transitionTime);
+                    }, displayTime);
+                }
+            
+                showNextNewsItem();
+            }
+            
+            // Fetch the news on page load and every 30 minutes
+            fetchNews();
+    
+            
+    
+            </script>
+                    <script>
+                        // Show loading screen for a short time, then hide it
+                        window.onload = function() {
+                            setTimeout(function() {
+                                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                            }, 2500); // Adjust timing if needed
+                        };
+                    </script>
+
+</body>
+
+</html>

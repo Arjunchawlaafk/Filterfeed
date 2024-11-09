@@ -1,0 +1,355 @@
+    /* ----------------------------------------------------------
+    :: Template Name: TheGazette - News Magazine HTML5 Template
+    :: Author: Colorlib
+    :: Author URL: https://colorlib.com
+    :: Description: TheGazette is a smart & creative news & magazine template. It's suitable for all news & magazine website.
+    :: Version: 1.0.0
+    :: Created: 17 January 2018
+    :: Last Updated: 17 January 2018
+    ---------------------------------------------------------- */
+
+    /* ============ PLACE YOUR CUSTOM CSS HERE ============ */
+
+
+    .middle-header .col-12 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Ensure it takes the full height of the parent */
+    }
+
+    .breaking-news-area {
+
+        margin-left: -30px;
+    }
+
+    .stock-news-area {
+        margin-top: 5px; /* Adjust the value as needed */
+    }
+    
+    .single-stock-report {
+        margin-bottom: -50px; /* Adjust the value as needed */
+    }
+
+    .plus-index {
+        color: green;
+    }
+    .minus-index {
+        color: red;
+    }
+    /* Add other styles as needed */
+    .ticker ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        animation: ticker 10s linear infinite;
+    }
+    @keyframes ticker {
+        from { transform: translateY(0); }
+        to { transform: translateY(-100%); }
+    }
+
+#breakingNewsTicker {
+    position: relative;
+
+    height: 30px; /* Set the height of the ticker */
+    overflow: hidden; /* Hide the overflow to create the scrolling effect */
+    background-color: transparent; /* Optional: LED board-like background */
+}
+
+#newsList {
+    display: inline-block;
+    white-space: nowrap; /* Keep all news items in one line */
+    position: absolute; /* Absolute positioning to control the animation */
+    animation: scroll-left 10s linear infinite; /* Animate the news items */
+}
+
+#newsList li {
+    display: inline-block; /* Display list items in a row */
+    padding-right: 50px; /* Space between news items */
+    font-size: 16px;
+    color: #ff084e; /* LED-like red color */
+    font-family: 'Courier', monospace; /* Optional: LED-style font */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%); /* Start from the right */
+    }
+    to {
+        transform: translateX(-100%); /* Move left until the list is off-screen */
+    }
+}
+
+/* For small screens like mobile devices */
+@media (max-width: 576px) {
+    .breaking-news-area {
+        margin-left: 0; /* Reset the margin on very small screens */
+    }
+}
+
+/* For larger screens like tablets */
+@media (min-width: 576px) and (max-width: 992px) {
+    .breaking-news-area {
+        margin-left: -10px; /* Slight adjustment on medium screens */
+    }
+}
+
+/* For desktop and larger screens */
+@media (min-width: 992px) {
+    .breaking-news-area {
+        margin-left: -30px; /* Keep the original margin for larger screens */
+    }
+}
+
+.widget-title {
+    margin-bottom: 20px; /* Space between heading and news */
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Make it bold */
+}
+
+.breaking-news-widget, .donnot-miss-widget {
+    margin-bottom: 40px; /* Space between widgets */
+    padding: 10px; /* Optional: add padding for better appearance */
+}
+
+.single-breaking-news-widget, .single-dont-miss-post {
+    margin-bottom: 15px; /* Space between news items */
+}
+
+
+.single-breaking-news-widget img,
+.single-dont-miss-post-thumb img {
+    width: 100%; /* Ensures images take the full width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.breaking-news-heading, 
+.dont-miss-post-content {
+    margin-top: 10px; /* Add some spacing between elements */
+}
+
+.single-breaking-news-widget {
+    margin-bottom: 15px; /* Add spacing between breaking news widgets */
+}
+
+.dont-miss-post-thumb {
+    flex: 0 0 30%; /* Adjusts the width of the image section */
+}
+
+.dont-miss-post-content {
+    flex: 1; /* Allows content section to take the remaining space */
+    padding-left: 10px; /* Adds some space between the image and content */
+}
+
+/* Dot container styles */
+.gazatte-editorial-area .owl-dots {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the dots horizontally */
+}
+
+/* Dot styles */
+.gazatte-editorial-area .owl-dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    margin: 0 3px; /* Horizontal spacing between dots */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Active dot style */
+.gazatte-editorial-area .owl-dot.active {
+    width: 9px; /* Make active dot larger */
+    height: 9px; /* Make active dot larger */
+    background-color: rgba(255, 255, 255, 1);
+    animation: editorial 1.5s infinite; /* Use 'editorial' animation */
+}
+
+/* Hover effect */
+.gazatte-editorial-area .owl-dot:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Change color on hover */
+    transform: scale(1.5); /* Scale up on hover */
+}
+
+/* Editorial pulsing animation */
+@keyframes editorial {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Scale up during the pulse */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.welcome-blog-post-slide {
+    display: block; /* Ensures the container holds the slides */
+    opacity: 1;     /* Makes the carousel visible */
+}
+
+.single-blog-post-slide {
+    height: 100%; /* Ensures full height slides */
+    display: flex; /* Flexbox for horizontal layout of items */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center content vertically */
+    background-size: cover; /* Ensure background images cover the div */
+    background-position: center; /* Center background images */
+}
+
+.owl-carousel .owl-item {
+    display: block; /* Each item in the carousel */
+    float: left; /* Ensure horizontal layout */
+}
+
+
+    /* Loading Screen Styles */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Ensure it covers other elements */
+    }
+
+    /* Loading Circle Styles */
+    .loading-circle {
+        border: 2px solid #f3f3f3; /* Light grey */
+        border-top: 2px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite; /* Spin animation */
+    }
+
+    /* Spin Animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10000; /* Ensure it appears above the loading screen */
+    padding: 25px 30px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    border: none; /* Removed border for a cleaner look */
+    border: 2px solid black;
+}
+
+/* Popup Content Styling */
+.popup-content h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Close Button Styling */
+#close-popup {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-popup:hover {
+    background-color: #ff4d4d;
+}
+
+.API {
+    border-radius: 8px;        /* Rounded corners for a softer look */
+    font-family: Arial, sans-serif; /* Clean, sans-serif font */
+}
+
+
+
+.API strong {
+    color: #333;               /* Dark color for emphasis */
+}
+
+.API a {
+    color: #007bff;            /* Bootstrap primary color for links */
+    text-decoration: none;      /* Remove underline from links */
+    transition: color 0.3s;    /* Smooth transition for hover effect */
+}
+
+.API a:hover {
+    color: #0056b3;            /* Darker shade on hover */
+    opacity: 0.6;
+}
+
+.informationproviders {
+    max-width: 800px;          /* Max width to prevent excessive stretching */
+    margin: 20px auto;         /* Center the section and add margin */
+    font-family: Arial, sans-serif; /* Clean, sans-serif font */
+
+}
+
+.informationproviders p {
+
+}
+
+.informationproviders ul {
+    padding-left: 0;           /* Remove default padding */
+    margin: 0;                  /* Remove default margin */
+}
+
+.informationproviders li {
+    position: relative;          /* Allow positioning of the pseudo-element */
+    padding-left: 20px;         /* Space for the custom symbol */
+    margin: 5px 0;              /* Margin between list items */
+}
+
+.informationproviders li::before {
+    content: '• ';              /* Change this to '-' or '*' for different symbols */
+    position: absolute;         /* Position it absolutely */
+    left: 0;                   /* Align to the left */
+    color: #007bff;            /* Custom color for the symbol */
+}
+
+.informationproviders a {
+    color: #007bff;             /* Primary color for links */
+    text-decoration: none;       /* Remove underline from links */
+    transition: color 0.3s;     /* Smooth transition for hover effect */
+}
+
+.informationproviders a:hover {
+    color: #0056b3;            /* Darker shade on hover */
+    opacity: 0.6;
+}
+
+.single-blog-post-slide a {
+    pointer-events: auto;
+    cursor: pointer;
+}
+

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>FilterFeed | Politics</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="https://fontmeme.com/permalink/241109/967f838d6465ff885449f419a5e7b243.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+<style>
+
+
+.blog-post-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%; /* This keeps the aspect ratio of the image container */
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.blog-post-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container and maintains aspect ratio */
+    border-radius: 8px;
+}
+
+.gazette-welcome-post h2 {
+    min-height: 60px;  /* Ensures a minimum height */
+    max-height: 90px;  /* Limits the maximum height */
+    overflow: hidden;  /* Prevents text overflow */
+    line-height: 1.4;  /* Controls spacing between lines */
+    display: -webkit-box;  /* Creates a flexible box for multiple lines */
+    -webkit-line-clamp: 3;  /* Limits the number of lines (you can adjust this) */
+    -webkit-box-orient: vertical;  /* Makes sure the lines are stacked vertically */
+}
+
+
+.gazette-welcome-post p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: nowrap;         /* Prevent text from wrapping to a new line */
+    overflow: hidden;           /* Hide text that overflows */
+    text-overflow: ellipsis;    /* Add an ellipsis (...) if text overflows */
+    max-height: 25px;           /* Ensure description does not exceed one line */
+}
+
+/* Ensuring no extra margin or padding for .catagory-welcome-post-area */
+.catagory-welcome-post-area {
+    margin-bottom: 0 !important; /* Remove any extra margin at the bottom */
+}
+
+/* Adjust the padding for .section_padding_100 to ensure no impact on the footer */
+.section_padding_100 {
+    padding-bottom: 0 !important; /* Remove bottom padding from section */
+}
+
+/* Ensure the footer has no extra margin-top */
+footer {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Optional: Ensure that the footer content stays at the bottom of the page */
+body, html {
+    height: 100%; /* Ensure full height */
+    margin: 0; /* Remove any default margin */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make sure content fills the space */
+}
+
+.content {
+    flex-grow: 1; /* Allow content to take up remaining space */
+}
+
+.news-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px;
+}
+
+
+.show-summary-btn,
+.continue-reading-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid black;
+    background-color: #ffffff;
+    color: rgb(48, 48, 48);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* For the continue-reading link */
+    display: inline-block;
+}
+
+.show-summary-btn:hover,
+.continue-reading-btn:hover {
+    background-color: #161616;
+    color: rgb(255, 255, 255);
+}
+
+/* Summary Box Styling */
+.summary-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background-color: white;
+    color: black;
+    display: none;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+}
+
+.summary-box h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.summary-box p {
+    font-size: medium;
+    margin-bottom: initial;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-height: none;
+}
+
+
+/* Minimalist Dropdown */
+.filter-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#country-select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    width: auto;
+}
+
+#country-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background-color: #ff0015;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #b80f0f;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-dropdown {
+        flex-direction: column; /* Stack dropdown and button vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 15px;
+    }
+
+    #country-select {
+        width: 100%; /* Full width on small screens */
+        max-width: none; /* Remove max-width restriction */
+    }
+
+    .btn-primary {
+        width: 100%; /* Full width on small screens */
+        max-width: none; /* Remove max-width restriction */
+    }
+}
+
+
+
+#news-posts-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Set each item to have the same width and align them in the flex layout */
+.gazette-welcome-post {
+    flex: 1 1 300px; /* Ensure a minimum width; adjust as needed */
+    max-width: 300px;
+}
+
+/* Completely remove hidden items */
+.hidden {
+    display: none !important;
+}
+
+
+
+</style>
+
+
+<body>
+    <div id="loading-screen">
+        <div class="loading-circle"></div>
+    </div>
+
+    
+
+        <!-- Header Area Start -->
+        <header class="header-area">
+            <div class="top-header">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Breaking News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="breaking-news-area">
+                                <h5 class="breaking-news-title">Top Headlines</h5>
+                                <div id="breakingNewsTicker" class="ticker">
+                                    <ul id="newsList">
+                                        <!-- News items will be injected here -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stock News Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="stock-news-area">
+                                <div id="stockNewsTicker" class="ticker">
+                                    <ul>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/USD</span>
+                                                    <span id="btc-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/INR</span>
+                                                    <span id="btc-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>BTC/EUR</span>
+                                                    <span id="btc-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="btc-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/USD</span>
+                                                    <span id="eth-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4 id="eth-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/INR</span>
+                                                    <span id="eth-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="eth-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>ETH/EUR</span>
+                                                    <span id="eth-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index minus-index">
+                                                    <h4 id="eth-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/USD</span>
+                                                    <span id="usdt-price-usd">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/INR</span>
+                                                    <span id="usdt-price-inr">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-inr-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                            <div class="single-stock-report">
+                                                <div class="stock-values">
+                                                    <span>USDT/EUR</span>
+                                                    <span id="usdt-price-eur">Fetching...</span>
+                                                </div>
+                                                <div class="stock-index plus-index">
+                                                    <h4 id="usdt-price-eur-change">0.00</h4> <!-- Placeholder for price change -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- Middle Header Area -->
+<div class="middle-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <!-- Logo Area -->
+            <div class="col-12 d-flex justify-content-center">
+                <div class="logo-area">
+                    <a href="/Home"><img src="https://fontmeme.com/permalink/241109/258fbbb811e2a4d9f13b5c59474a107b.png" alt="logo"></a>
+                </div>
+            </div>
+            <!-- Header Advert Area 
+            <div class="col-12 col-md-8">
+                <div class="header-advert-area">
+                    <a href="#"><img src="img/core-img/logo.png" alt="header-add"></a>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bottom Header Area -->
+<div class="bottom-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="main-menu">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                        <div class="collapse navbar-collapse" id="gazetteMenu">
+                            <ul class="navbar-nav mr-auto" class="but">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/Home">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                              <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catagory</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/Politics">Politices</a>
+                                        <a class="dropdown-item" href="/Tech">Tech</a>
+                                        <a class="dropdown-item" href="/World">World</a>
+                                        <a class="dropdown-item" href="/Entertainment">Entertainment</a>
+                                        <a class="dropdown-item" href="/Sports">Sports</a>
+                                        <a class="dropdown-item" href="/Finance">Finance</a>
+                                        <a class="dropdown-item" href="/Science">Science</a>
+                                        <a class="dropdown-item" href="/Economics">Economics</a>
+                                        <a class="dropdown-item" href="/Business">Business</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/About-us">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Contact">Contact</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/Acknowledgements">Acknowledgements</a>
+                                        <a class="dropdown-item" href="/Privacy-Policy">Privacy Policy</a>
+                                        <a class="dropdown-item" href="/Terms-and-Conditions">Terms and conditions</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<!-- Breadcumb Area Start -->
+<div class="breadcumb-area section_padding_50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breacumb-content d-flex align-items-center justify-content-between">
+                    <!-- Post Tag -->
+                    <div class="gazette-post-tag">
+                        <a href="#">Politics</a>
+                    </div>
+
+                    <!-- Filter Dropdown and Button -->
+                    <div class="filter-dropdown">
+                        <select id="country-select" class="form-control">
+                            <option value="">All Countries</option>
+                        </select>
+                        <button onclick="applyFilter()" class="btn btn-primary">Apply Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcumb Area End -->
+
+
+<!-- Breadcumb Area End -->
+        
+                <section class="catagory-welcome-post-area section_padding_100">
+                    <div class="container">
+                        <div class="row" id="news-posts-container">
+                            <!-- News posts will be injected here -->
+                        </div>
+                    </div>
+                </section>
+        </div>
+        <footer class="footer-area bg-img background-overlay" style="background-image: url();" class="footer">
+                   <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area" style="background-color: rgb(237, 237, 237);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12">
+                        <div class="copywrite-text">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                This website template is licensed under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0 |</a> Design credits to <a href="https://colorlib.com" target="_blank">a trusted design repository </a>
+                               <!-- Copyright  &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                                 Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </footer>
+    </div
+    <!--Footer Area End -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+
+    <!-- Fetch crypto prices from CoinGecko API -->
+    <script>
+const apiKey = 'CG-zN4mRF3ph6G9mTGSB7P61M1e'; // Your API key
+const coingeckoApiURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,inr,eur&include_24hr_change=true';
+
+// Store previous prices for comparison
+let previousPrices = {
+    btc: { usd: 0, inr: 0, eur: 0 },
+    eth: { usd: 0, inr: 0, eur: 0 },
+    usdt: { usd: 0, inr: 0, eur: 0 }
+};
+
+async function fetchCryptoPrices() {
+    try {
+        // Fetch crypto prices from CoinGecko using your API key
+        const cryptoResponse = await fetch(coingeckoApiURL);
+        const cryptoData = await cryptoResponse.json();
+
+        console.log('API Response:', cryptoData); // Log the response for debugging
+
+        // Check if the data is valid
+        if (cryptoResponse.ok && cryptoData) {
+            // Extract current prices and 24h price changes
+            const btcPriceUsd = parseFloat(cryptoData.bitcoin.usd).toFixed(2);
+            const btcPriceChangeUsd = parseFloat(cryptoData.bitcoin.usd_24h_change).toFixed(2);
+
+            const btcPriceInr = parseFloat(cryptoData.bitcoin.inr).toFixed(2);
+            const btcPriceChangeInr = parseFloat(cryptoData.bitcoin.inr_24h_change).toFixed(2);
+
+            const btcPriceEur = parseFloat(cryptoData.bitcoin.eur).toFixed(2);
+            const btcPriceChangeEur = parseFloat(cryptoData.bitcoin.eur_24h_change).toFixed(2);
+
+            const ethPriceUsd = parseFloat(cryptoData.ethereum.usd).toFixed(2);
+            const ethPriceChangeUsd = parseFloat(cryptoData.ethereum.usd_24h_change).toFixed(2);
+
+            const ethPriceInr = parseFloat(cryptoData.ethereum.inr).toFixed(2);
+            const ethPriceChangeInr = parseFloat(cryptoData.ethereum.inr_24h_change).toFixed(2);
+
+            const ethPriceEur = parseFloat(cryptoData.ethereum.eur).toFixed(2);
+            const ethPriceChangeEur = parseFloat(cryptoData.ethereum.eur_24h_change).toFixed(2);
+
+            const usdtPriceUsd = parseFloat(cryptoData.tether.usd).toFixed(2);
+            const usdtPriceChangeUsd = parseFloat(cryptoData.tether.usd_24h_change).toFixed(2);
+
+            const usdtPriceInr = parseFloat(cryptoData.tether.inr).toFixed(2);
+            const usdtPriceChangeInr = parseFloat(cryptoData.tether.inr_24h_change).toFixed(2);
+
+            const usdtPriceEur = parseFloat(cryptoData.tether.eur).toFixed(2);
+            const usdtPriceChangeEur = parseFloat(cryptoData.tether.eur_24h_change).toFixed(2);
+
+            // Update price changes and display them
+            updatePrice('btc', btcPriceUsd, btcPriceInr, btcPriceEur, btcPriceChangeUsd, btcPriceChangeInr, btcPriceChangeEur);
+            updatePrice('eth', ethPriceUsd, ethPriceInr, ethPriceEur, ethPriceChangeUsd, ethPriceChangeInr, ethPriceChangeEur);
+            updatePrice('usdt', usdtPriceUsd, usdtPriceInr, usdtPriceEur, usdtPriceChangeUsd, usdtPriceChangeInr, usdtPriceChangeEur);
+        } else {
+            console.error('Error fetching prices:', cryptoData);
+            showError();
+        }
+    } catch (error) {
+        console.error('Error fetching prices:', error);
+        showError();
+    }
+}
+
+function showError() {
+    document.querySelector('#btc-price-usd').innerText = 'Error fetching';
+    document.querySelector('#eth-price-usd').innerText = 'Error fetching';
+    document.querySelector('#usdt-price-usd').innerText = 'Error fetching';
+}
+
+// Update price and percentage change
+function updatePrice(crypto, priceUsd, priceInr, priceEur, changeUsd, changeInr, changeEur) {
+    // Add currency symbols to the prices
+    const formattedUsdPrice = `$${priceUsd}`;
+    const formattedInrPrice = `₹${priceInr}`;
+    const formattedEurPrice = `€${priceEur}`;
+
+    // Update the displayed price changes in HTML
+    setPriceChangeText(`#${crypto}-price-change`, changeUsd);
+    setPriceChangeText(`#${crypto}-price-inr-change`, changeInr);
+    setPriceChangeText(`#${crypto}-price-eur-change`, changeEur);
+
+    // Update the HTML elements with the fetched prices
+    document.querySelector(`#${crypto}-price-usd`).innerText = formattedUsdPrice;
+    document.querySelector(`#${crypto}-price-inr`).innerText = formattedInrPrice;
+    document.querySelector(`#${crypto}-price-eur`).innerText = formattedEurPrice;
+
+    // Save the current prices as the previous prices for the next update
+    previousPrices[crypto] = { 
+        usd: parseFloat(priceUsd), 
+        inr: parseFloat(priceInr), 
+        eur: parseFloat(priceEur) 
+    };
+}
+
+
+// Function to set price change text, color, and class based on value
+function setPriceChangeText(selector, change) {
+    const element = document.querySelector(selector);
+    element.innerText = change + '%';
+
+    // Apply color and class based on the change value
+    if (parseFloat(change) < 0) {
+        element.style.color = 'red'; // Negative change
+        element.parentElement.classList.remove('plus-index');
+        element.parentElement.classList.add('minus-index');
+    } else {
+        element.style.color = 'green'; // Positive change
+        element.parentElement.classList.remove('minus-index');
+        element.parentElement.classList.add('plus-index');
+    }
+}
+
+// Fetch prices every 10 seconds
+setInterval(fetchCryptoPrices, 30000); // 30-second interval
+fetchCryptoPrices(); // Initial fetch
+
+    </script>
+            <script>
+                // Show loading screen for a short time, then hide it
+                window.onload = function() {
+                    setTimeout(function() {
+                        document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                    }, 2500); // Adjust timing if needed
+                };
+            </script>
+            <script>
+                const apiUrl = 'http://localhost:3000/news/news'; // Replace 'finance' with any category
+            
+                async function fetchNews() {
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+            
+                    const data = await response.json();
+                    console.log('API Response:', data); // Debugging
+            
+                    const articles = data.slice(0, 5); // First 5 articles
+                    const newsList = document.getElementById('newsList');
+            
+                    // Clear existing news items
+                    newsList.innerHTML = '';
+            
+                    if (articles.length === 0) {
+                        const noArticlesItem = document.createElement('li');
+                        noArticlesItem.className = 'ticker-item';
+                        noArticlesItem.textContent = 'No articles found.';
+                        newsList.appendChild(noArticlesItem);
+                        return;
+                    }
+            
+                    articles.forEach((article) => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'ticker-item';
+            
+                        // Only add a link if the link field exists
+                        if (article.link) {
+                            const link = document.createElement('a');
+                            link.href = article.link;  // Updated to use 'link' instead of 'url'
+                            link.target = '_blank';
+                            link.textContent = article.title;
+                            listItem.appendChild(link);
+                        } else {
+                            listItem.textContent = article.title || 'No title available';
+                        }
+            
+                        newsList.appendChild(listItem);
+                    });
+            
+                    // Initialize the ticker animation
+                    initializeTicker();
+            
+                } catch (error) {
+                    console.error('Error fetching news:', error);
+                    const newsList = document.getElementById('newsList');
+                    newsList.innerHTML = '<li>Error fetching news. Please try again later.</li>';
+                }
+            }
+            
+            
+                    
+                    // Function to initialize the ticker animation
+                    function initializeTicker() {
+                        const items = document.querySelectorAll('#newsList li');
+                        if (items.length === 0) return;
+                    
+                        let currentIndex = 0;
+                        const itemCount = items.length;
+                    
+                        function showNextNewsItem() {
+                            items.forEach(item => {
+                                item.classList.remove('active', 'exit');
+                                item.style.display = 'none';
+                            });
+                    
+                            items[currentIndex].classList.add('active');
+                            items[currentIndex].style.display = 'block';
+                    
+                            const displayTime = 8000;
+                            const transitionTime = 1800;
+                    
+                            setTimeout(() => {
+                                items[currentIndex].classList.add('exit');
+                                currentIndex = (currentIndex + 1) % itemCount;
+                                setTimeout(showNextNewsItem, transitionTime);
+                            }, displayTime);
+                        }
+                    
+                        showNextNewsItem();
+                    }
+                    
+                    // Fetch the news on page load and every 30 minutes
+                    fetchNews();
+            
+                    
+            
+                    </script>    
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const postsContainer = document.querySelector('#news-posts-container');
+        const countrySelect = document.getElementById('country-select');
+        let allArticles = []; // Store all articles initially
+        
+        // Function to render news articles in the DOM
+        function renderNews(articles) {
+            postsContainer.innerHTML = ''; // Clear existing content
+    
+            // Create a Set to track unique article titles
+            const uniqueTitles = new Set();
+            const filteredArticles = articles.filter(article => {
+                if (uniqueTitles.has(article.title)) {
+                    return false; // Duplicate article title, skip it
+                }
+                uniqueTitles.add(article.title); // Add unique article title to the Set
+                return true; // Keep the article
+            });
+    
+            // Render the filtered articles (without duplicates)
+            filteredArticles.forEach(article => {
+                const postHTML = `
+        <div class="col-12 col-md-4 mb-4">
+            <div class="gazette-welcome-post news-item" data-country="${article.country}">
+                <div class="gazette-post-tag">
+                    <a href="#">${article.clean_url || 'Unknown Source'}</a>
+                </div>
+                <h2 class="font-pt">${article.title}</h2>
+                <p class="gazette-post-date">${new Date(article.published_date).toLocaleDateString()}</p>
+                <div class="blog-post-thumbnail my-5">
+<img src="${article.media || 'img/not-available.jpg'}" alt="${article.title}" onerror="this.onerror=null;this.src='img/not-available.jpg';">
+                </div>
+                <p>${article.excerpt || 'No description available.'}</p>
+                <div class="button-group">
+                    <button class="show-summary-btn" onclick="toggleSummary(this)">Show Summary</button>
+                    <a href="${article.link}" class="continue-reading-btn" target="_blank">Continue Reading</a>
+                </div>
+                <div class="summary-box">
+                    <h3>${article.title}</h3>
+                    <p>${article.summary || 'No description available.'}</p>
+                </div>
+            </div>
+        </div>
+                `;
+                postsContainer.innerHTML += postHTML;
+            });
+        }
+    
+        // Function to fetch news from the API
+        async function fetchNews() {
+            try {
+                const response = await fetch('http://localhost:3000/news/politics');
+                const newArticles = await response.json();
+    
+                if (!newArticles || newArticles.length === 0) {
+                    console.error('No articles found');
+                    return;
+                }
+    
+                allArticles = newArticles;
+                renderNews(allArticles); // Render new articles
+    
+                updateFilterOptions(allArticles); // Add countries to dropdown after fetching news
+            } catch (error) {
+                console.error('Error fetching the news:', error);
+            }
+        }
+    
+        // Function to update the filter dropdown options based on all available countries
+        function updateFilterOptions(articles) {
+            const countries = new Set();
+    
+            // Add countries from the articles into the Set (based on all articles)
+            articles.forEach(article => {
+                countries.add(article.country);
+            });
+    
+            // Rebuild the country select dropdown with all available countries
+            countrySelect.innerHTML = '<option value="">All Countries</option>';
+    
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = getCountryName(country);
+                countrySelect.appendChild(option);
+            });
+        }
+    
+        // Helper function to convert country code to country name
+        function getCountryName(code) {
+            const countryNames = {
+        "AF": "Afghanistan",
+        "AL": "Albania",
+        "DZ": "Algeria",
+        "AD": "Andorra",
+        "AO": "Angola",
+        "AR": "Argentina",
+        "AM": "Armenia",
+        "AU": "Australia",
+        "AT": "Austria",
+        "AZ": "Azerbaijan",
+        "BS": "Bahamas",
+        "BH": "Bahrain",
+        "BD": "Bangladesh",
+        "BB": "Barbados",
+        "BY": "Belarus",
+        "BE": "Belgium",
+        "BZ": "Belize",
+        "BJ": "Benin",
+        "BT": "Bhutan",
+        "BO": "Bolivia",
+        "BA": "Bosnia and Herzegovina",
+        "BW": "Botswana",
+        "BR": "Brazil",
+        "BN": "Brunei Darussalam",
+        "BG": "Bulgaria",
+        "BF": "Burkina Faso",
+        "BI": "Burundi",
+        "KH": "Cambodia",
+        "CM": "Cameroon",
+        "CA": "Canada",
+        "CV": "Cape Verde",
+        "KY": "Cayman Islands",
+        "CF": "Central African Republic",
+        "TD": "Chad",
+        "CL": "Chile",
+        "CN": "China",
+        "CO": "Colombia",
+        "KM": "Comoros",
+        "CG": "Congo",
+        "CD": "Congo (Democratic Republic)",
+        "CR": "Costa Rica",
+        "CI": "Côte d'Ivoire",
+        "HR": "Croatia",
+        "CU": "Cuba",
+        "CY": "Cyprus",
+        "CZ": "Czech Republic",
+        "DK": "Denmark",
+        "DJ": "Djibouti",
+        "DM": "Dominica",
+        "DO": "Dominican Republic",
+        "EC": "Ecuador",
+        "EG": "Egypt",
+        "SV": "El Salvador",
+        "GQ": "Equatorial Guinea",
+        "ER": "Eritrea",
+        "EE": "Estonia",
+        "SZ": "Eswatini",
+        "ET": "Ethiopia",
+        "FI": "Finland",
+        "FR": "France",
+        "GA": "Gabon",
+        "GB": "United Kingdom",
+        "GD": "Grenada",
+        "GE": "Georgia",
+        "GH": "Ghana",
+        "GR": "Greece",
+        "GT": "Guatemala",
+        "GN": "Guinea",
+        "GW": "Guinea-Bissau",
+        "GY": "Guyana",
+        "HT": "Haiti",
+        "HN": "Honduras",
+        "HK": "Hong Kong",
+        "HU": "Hungary",
+        "IS": "Iceland",
+        "IN": "India",
+        "ID": "Indonesia",
+        "IR": "Iran",
+        "IQ": "Iraq",
+        "IE": "Ireland",
+        "IL": "Israel",
+        "IT": "Italy",
+        "JM": "Jamaica",
+        "JP": "Japan",
+        "JO": "Jordan",
+        "KZ": "Kazakhstan",
+        "KE": "Kenya",
+        "KI": "Kiribati",
+        "KR": "South Korea",
+        "KW": "Kuwait",
+        "KG": "Kyrgyzstan",
+        "LA": "Laos",
+        "LV": "Latvia",
+        "LB": "Lebanon",
+        "LS": "Lesotho",
+        "LR": "Liberia",
+        "LY": "Libya",
+        "LI": "Liechtenstein",
+        "LT": "Lithuania",
+        "LU": "Luxembourg",
+        "MO": "Macau",
+        "MK": "North Macedonia",
+        "MG": "Madagascar",
+        "MW": "Malawi",
+        "MY": "Malaysia",
+        "MV": "Maldives",
+        "ML": "Mali",
+        "MT": "Malta",
+        "MH": "Marshall Islands",
+        "MQ": "Martinique",
+        "MR": "Mauritania",
+        "MU": "Mauritius",
+        "YT": "Mayotte",
+        "MX": "Mexico",
+        "FM": "Micronesia (Federated States)",
+        "MD": "Moldova",
+        "MC": "Monaco",
+        "MN": "Mongolia",
+        "ME": "Montenegro",
+        "MS": "Montserrat",
+        "MA": "Morocco",
+        "MZ": "Mozambique",
+        "MM": "Myanmar",
+        "NA": "Namibia",
+        "NR": "Nauru",
+        "NP": "Nepal",
+        "NL": "Netherlands",
+        "NC": "New Caledonia",
+        "NZ": "New Zealand",
+        "NI": "Nicaragua",
+        "NE": "Niger",
+        "NG": "Nigeria",
+        "NO": "Norway",
+        "NP": "Nepal",
+        "OM": "Oman",
+        "PK": "Pakistan",
+        "PA": "Panama",
+        "PG": "Papua New Guinea",
+        "PY": "Paraguay",
+        "PE": "Peru",
+        "PH": "Philippines",
+        "PL": "Poland",
+        "PT": "Portugal",
+        "PR": "Puerto Rico",
+        "QA": "Qatar",
+        "RO": "Romania",
+        "RU": "Russia",
+        "RW": "Rwanda",
+        "RE": "Réunion",
+        "BL": "Saint Barthélemy",
+        "SH": "Saint Helena",
+        "KN": "Saint Kitts and Nevis",
+        "LC": "Saint Lucia",
+        "MF": "Saint Martin (French part)",
+        "PM": "Saint Pierre and Miquelon",
+        "VC": "Saint Vincent and the Grenadines",
+        "WS": "Samoa",
+        "SM": "San Marino",
+        "ST": "Sao Tome and Principe",
+        "SA": "Saudi Arabia",
+        "SN": "Senegal",
+        "RS": "Serbia",
+        "SC": "Seychelles",
+        "SL": "Sierra Leone",
+        "SG": "Singapore",
+        "SX": "Sint Maarten (Dutch part)",
+        "SK": "Slovakia",
+        "SI": "Slovenia",
+        "SB": "Solomon Islands",
+        "SO": "Somalia",
+        "ZA": "South Africa",
+        "SS": "South Sudan",
+        "ES": "Spain",
+        "LK": "Sri Lanka",
+        "SD": "Sudan",
+        "SR": "Suriname",
+        "SJ": "Svalbard and Jan Mayen",
+        "SE": "Sweden",
+        "CH": "Switzerland",
+        "SY": "Syria",
+        "TW": "Taiwan",
+        "TJ": "Tajikistan",
+        "TZ": "Tanzania",
+        "TH": "Thailand",
+        "TG": "Togo",
+        "TK": "Tokelau",
+        "TO": "Tonga",
+        "TT": "Trinidad and Tobago",
+        "TN": "Tunisia",
+        "TR": "Turkey",
+        "TM": "Turkmenistan",
+        "TC": "Turks and Caicos Islands",
+        "TV": "Tuvalu",
+        "UG": "Uganda",
+        "UA": "Ukraine",
+        "AE": "United Arab Emirates",
+        "GB": "United Kingdom",
+        "US": "United States",
+        "UY": "Uruguay",
+        "UZ": "Uzbekistan",
+        "VU": "Vanuatu",
+        "VE": "Venezuela",
+        "VN": "Vietnam",
+        "WF": "Wallis and Futuna",
+        "YE": "Yemen",
+        "ZM": "Zambia",
+        "unknown": "Not Defined",
+        "ZW": "Zimbabwe"
+            };
+            return countryNames[code] || code; // Default to code if no match
+        }
+    
+        // Filter articles based on selected country without clearing container
+        window.applyFilter = function() {
+            const selectedCountry = countrySelect.value;
+            const filteredArticles = selectedCountry
+                ? allArticles.filter(article => article.country === selectedCountry)
+                : allArticles;
+    
+            renderNews(filteredArticles); // Render only filtered articles
+        };
+    
+        // Fetch news on page load
+        fetchNews();
+    
+        // Toggle summary display for news items
+        window.toggleSummary = function(button) {
+            const newsItem = button.closest('.gazette-welcome-post');
+            const summaryBox = newsItem.querySelector('.summary-box');
+    
+            if (summaryBox.style.display === 'block') {
+                summaryBox.style.display = 'none';
+                button.textContent = 'Show Summary';
+            } else {
+                summaryBox.style.display = 'block';
+                button.textContent = 'Close';
+            }
+        };
+    });
+</script>
+
+    
+
+
+
+
+    
+</body>
+</html>
